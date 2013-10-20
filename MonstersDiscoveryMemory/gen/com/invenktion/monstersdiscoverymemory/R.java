@@ -8,6 +8,24 @@
 package com.invenktion.monstersdiscoverymemory;
 
 public final class R {
+    public static final class anim {
+        public static final int ammorotationset=0x7f040000;
+        public static final int colorchooseanimation=0x7f040001;
+        public static final int colorchooseanimation2=0x7f040002;
+        public static final int countdownanimation=0x7f040003;
+        public static final int hoverenteranimation=0x7f040004;
+        public static final int jhonnyfaceanimation=0x7f040005;
+        public static final int levelselectionanimation=0x7f040006;
+        public static final int newrecord=0x7f040007;
+        public static final int newrecordovershootinterpolator=0x7f040008;
+        public static final int rotationset=0x7f040009;
+        public static final int rotationset2=0x7f04000a;
+        public static final int rotationset3=0x7f04000b;
+        public static final int rotationset4=0x7f04000c;
+        public static final int rotationset5=0x7f04000d;
+        public static final int terremotoanimation=0x7f04000e;
+        public static final int vorticeanimation=0x7f04000f;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -17,86 +35,290 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int coperto=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int mix=0x7f020002;
-        public static final int smarje=0x7f020003;
-        public static final int spinuz=0x7f020004;
-        public static final int w1_monster1=0x7f020005;
-        public static final int w1_monster10=0x7f020006;
-        public static final int w1_monster2=0x7f020007;
-        public static final int w1_monster3=0x7f020008;
-        public static final int w1_monster4=0x7f020009;
-        public static final int w1_monster5=0x7f02000a;
-        public static final int w1_monster6=0x7f02000b;
-        public static final int w1_monster7=0x7f02000c;
-        public static final int w1_monster8=0x7f02000d;
-        public static final int w1_monster9=0x7f02000e;
-        public static final int w2_monster1=0x7f02000f;
-        public static final int w2_monster2=0x7f020010;
-        public static final int w2_monster3=0x7f020011;
-        public static final int w2_monster4=0x7f020012;
-        public static final int w2_monster5=0x7f020013;
-        public static final int w2_monster6=0x7f020014;
-        public static final int w2_monster7=0x7f020015;
-        public static final int w2_monster8=0x7f020016;
-        public static final int w3_monster1=0x7f020017;
-        public static final int w3_monster10=0x7f020018;
-        public static final int w3_monster2=0x7f020019;
-        public static final int w3_monster3=0x7f02001a;
-        public static final int w3_monster4=0x7f02001b;
-        public static final int w3_monster5=0x7f02001c;
-        public static final int w3_monster6=0x7f02001d;
-        public static final int w3_monster7=0x7f02001e;
-        public static final int w3_monster8=0x7f02001f;
-        public static final int w3_monster9=0x7f020020;
-        public static final int w4_monster1=0x7f020021;
-        public static final int w4_monster10=0x7f020022;
-        public static final int w4_monster2=0x7f020023;
-        public static final int w4_monster3=0x7f020024;
-        public static final int w4_monster4=0x7f020025;
-        public static final int w4_monster5=0x7f020026;
-        public static final int w4_monster6=0x7f020027;
-        public static final int w4_monster7=0x7f020028;
-        public static final int w4_monster8=0x7f020029;
-        public static final int w4_monster9=0x7f02002a;
-        public static final int w5_monster1=0x7f02002b;
-        public static final int w5_monster10=0x7f02002c;
-        public static final int w5_monster2=0x7f02002d;
-        public static final int w5_monster3=0x7f02002e;
-        public static final int w5_monster4=0x7f02002f;
-        public static final int w5_monster5=0x7f020030;
-        public static final int w5_monster6=0x7f020031;
-        public static final int w5_monster7=0x7f020032;
-        public static final int w5_monster8=0x7f020033;
-        public static final int w5_monster9=0x7f020034;
-        public static final int wb_monster1=0x7f020035;
-        public static final int wb_monster2=0x7f020036;
-        public static final int wb_monster3=0x7f020037;
-        public static final int wb_monster4=0x7f020038;
-        public static final int wb_monster5=0x7f020039;
-        public static final int zeze=0x7f02003a;
+        public static final int br2=0x7f020000;
+        public static final int btn_1=0x7f020001;
+        public static final int btn_2=0x7f020002;
+        public static final int btn_3=0x7f020003;
+        public static final int btn_4=0x7f020004;
+        public static final int btn_no=0x7f020005;
+        public static final int btn_yes=0x7f020006;
+        public static final int coperto=0x7f020007;
+        public static final int credits=0x7f020008;
+        public static final int dialogbg=0x7f020009;
+        public static final int facebook=0x7f02000a;
+        public static final int fondo=0x7f02000b;
+        public static final int home1=0x7f02000c;
+        public static final int home_face=0x7f02000d;
+        public static final int home_logo_k=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int invenktionbig=0x7f020010;
+        public static final int jhonnybrushfull=0x7f020011;
+        public static final int jhonnybrushfull_9=0x7f020012;
+        public static final int logo=0x7f020013;
+        public static final int m_w1_monster1=0x7f020014;
+        public static final int m_w1_monster10=0x7f020015;
+        public static final int m_w1_monster2=0x7f020016;
+        public static final int m_w1_monster3=0x7f020017;
+        public static final int m_w1_monster4=0x7f020018;
+        public static final int m_w1_monster5=0x7f020019;
+        public static final int m_w1_monster6=0x7f02001a;
+        public static final int m_w1_monster7=0x7f02001b;
+        public static final int m_w1_monster8=0x7f02001c;
+        public static final int m_w1_monster9=0x7f02001d;
+        public static final int m_w2_monster1=0x7f02001e;
+        public static final int m_w2_monster2=0x7f02001f;
+        public static final int m_w2_monster3=0x7f020020;
+        public static final int m_w2_monster4=0x7f020021;
+        public static final int m_w2_monster5=0x7f020022;
+        public static final int m_w2_monster6=0x7f020023;
+        public static final int m_w2_monster7=0x7f020024;
+        public static final int m_w2_monster8=0x7f020025;
+        public static final int m_w3_monster1=0x7f020026;
+        public static final int m_w3_monster10=0x7f020027;
+        public static final int m_w3_monster2=0x7f020028;
+        public static final int m_w3_monster3=0x7f020029;
+        public static final int m_w3_monster4=0x7f02002a;
+        public static final int m_w3_monster5=0x7f02002b;
+        public static final int m_w3_monster6=0x7f02002c;
+        public static final int m_w3_monster7=0x7f02002d;
+        public static final int m_w3_monster8=0x7f02002e;
+        public static final int m_w3_monster9=0x7f02002f;
+        public static final int m_w4_monster1=0x7f020030;
+        public static final int m_w4_monster10=0x7f020031;
+        public static final int m_w4_monster2=0x7f020032;
+        public static final int m_w4_monster3=0x7f020033;
+        public static final int m_w4_monster4=0x7f020034;
+        public static final int m_w4_monster5=0x7f020035;
+        public static final int m_w4_monster6=0x7f020036;
+        public static final int m_w4_monster7=0x7f020037;
+        public static final int m_w4_monster8=0x7f020038;
+        public static final int m_w4_monster9=0x7f020039;
+        public static final int m_w5_monster1=0x7f02003a;
+        public static final int m_w5_monster10=0x7f02003b;
+        public static final int m_w5_monster2=0x7f02003c;
+        public static final int m_w5_monster3=0x7f02003d;
+        public static final int m_w5_monster4=0x7f02003e;
+        public static final int m_w5_monster5=0x7f02003f;
+        public static final int m_w5_monster6=0x7f020040;
+        public static final int m_w5_monster7=0x7f020041;
+        public static final int m_w5_monster8=0x7f020042;
+        public static final int m_w5_monster9=0x7f020043;
+        public static final int m_wb_monster1=0x7f020044;
+        public static final int m_wb_monster2=0x7f020045;
+        public static final int m_wb_monster3=0x7f020046;
+        public static final int m_wb_monster4=0x7f020047;
+        public static final int m_wb_monster5=0x7f020048;
+        public static final int mix=0x7f020049;
+        public static final int sfondostellare=0x7f02004a;
+        public static final int smarje=0x7f02004b;
+        public static final int soundoff=0x7f02004c;
+        public static final int soundon=0x7f02004d;
+        public static final int spinuz=0x7f02004e;
+        public static final int transparent=0x7f02004f;
+        public static final int twitter=0x7f020050;
+        public static final int w1_monster1=0x7f020051;
+        public static final int w1_monster10=0x7f020052;
+        public static final int w1_monster2=0x7f020053;
+        public static final int w1_monster3=0x7f020054;
+        public static final int w1_monster4=0x7f020055;
+        public static final int w1_monster5=0x7f020056;
+        public static final int w1_monster6=0x7f020057;
+        public static final int w1_monster7=0x7f020058;
+        public static final int w1_monster8=0x7f020059;
+        public static final int w1_monster9=0x7f02005a;
+        public static final int w2_monster1=0x7f02005b;
+        public static final int w2_monster2=0x7f02005c;
+        public static final int w2_monster3=0x7f02005d;
+        public static final int w2_monster4=0x7f02005e;
+        public static final int w2_monster5=0x7f02005f;
+        public static final int w2_monster6=0x7f020060;
+        public static final int w2_monster7=0x7f020061;
+        public static final int w2_monster8=0x7f020062;
+        public static final int w3_monster1=0x7f020063;
+        public static final int w3_monster10=0x7f020064;
+        public static final int w3_monster2=0x7f020065;
+        public static final int w3_monster3=0x7f020066;
+        public static final int w3_monster4=0x7f020067;
+        public static final int w3_monster5=0x7f020068;
+        public static final int w3_monster6=0x7f020069;
+        public static final int w3_monster7=0x7f02006a;
+        public static final int w3_monster8=0x7f02006b;
+        public static final int w3_monster9=0x7f02006c;
+        public static final int w4_monster1=0x7f02006d;
+        public static final int w4_monster10=0x7f02006e;
+        public static final int w4_monster2=0x7f02006f;
+        public static final int w4_monster3=0x7f020070;
+        public static final int w4_monster4=0x7f020071;
+        public static final int w4_monster5=0x7f020072;
+        public static final int w4_monster6=0x7f020073;
+        public static final int w4_monster7=0x7f020074;
+        public static final int w4_monster8=0x7f020075;
+        public static final int w4_monster9=0x7f020076;
+        public static final int w5_monster1=0x7f020077;
+        public static final int w5_monster10=0x7f020078;
+        public static final int w5_monster2=0x7f020079;
+        public static final int w5_monster3=0x7f02007a;
+        public static final int w5_monster4=0x7f02007b;
+        public static final int w5_monster5=0x7f02007c;
+        public static final int w5_monster6=0x7f02007d;
+        public static final int w5_monster7=0x7f02007e;
+        public static final int w5_monster8=0x7f02007f;
+        public static final int w5_monster9=0x7f020080;
+        public static final int wb_monster1=0x7f020081;
+        public static final int wb_monster2=0x7f020082;
+        public static final int wb_monster3=0x7f020083;
+        public static final int wb_monster4=0x7f020084;
+        public static final int wb_monster5=0x7f020085;
+        public static final int white_btn=0x7f020086;
+        public static final int zeze=0x7f020087;
     }
     public static final class id {
-        public static final int action_settings=0x7f080001;
-        public static final int rowContainer=0x7f080000;
+        public static final int action_settings=0x7f0a0027;
+        public static final int creditsimage=0x7f0a0022;
+        public static final int developed1=0x7f0a0003;
+        public static final int developed2=0x7f0a0004;
+        public static final int dialogbuttoncontainer=0x7f0a0015;
+        public static final int facebook=0x7f0a000f;
+        public static final int facejhonny=0x7f0a001b;
+        public static final int follow1=0x7f0a000e;
+        public static final int gamedesigntext=0x7f0a0009;
+        public static final int gamedesigntextvalue=0x7f0a000a;
+        public static final int gamedesigntextvalue2=0x7f0a000b;
+        public static final int homelayout=0x7f0a0019;
+        public static final int homescreen=0x7f0a001a;
+        public static final int impossibile=0x7f0a0020;
+        public static final int invenktionbottom=0x7f0a001c;
+        public static final int invenktionbottomlogo=0x7f0a0023;
+        public static final int layout_root=0x7f0a0013;
+        public static final int leadartisttext=0x7f0a0005;
+        public static final int leadartisttextvalue=0x7f0a0006;
+        public static final int leadprogrammertext=0x7f0a0007;
+        public static final int leadprogrammertextvalue=0x7f0a0008;
+        public static final int logoimage=0x7f0a0002;
+        public static final int logok=0x7f0a0024;
+        public static final int noButton=0x7f0a0017;
+        public static final int rowContainer=0x7f0a0018;
+        public static final int scrollcredits=0x7f0a0000;
+        public static final int scrolltraspbottom=0x7f0a0012;
+        public static final int scrolltrasptop=0x7f0a0001;
+        public static final int sound1=0x7f0a000c;
+        public static final int sound2=0x7f0a000d;
+        public static final int soundimage=0x7f0a0021;
+        public static final int splashlayout=0x7f0a0025;
+        public static final int splashlogo=0x7f0a0026;
+        public static final int textcinque=0x7f0a001e;
+        public static final int textexit=0x7f0a0014;
+        public static final int texttre=0x7f0a001f;
+        public static final int textuno=0x7f0a001d;
+        public static final int twitter=0x7f0a0010;
+        public static final int whois1=0x7f0a0011;
+        public static final int yesButton=0x7f0a0016;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static final int credits=0x7f030000;
+        public static final int exit_application_dialog=0x7f030001;
+        public static final int gameboard=0x7f030002;
+        public static final int home=0x7f030003;
+        public static final int splashscreen=0x7f030004;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f090000;
+    }
+    public static final class raw {
+        public static final int coins=0x7f050000;
+        public static final int flush=0x7f050001;
+        public static final int go=0x7f050002;
+        public static final int negative=0x7f050003;
+        public static final int one=0x7f050004;
+        public static final int plaf=0x7f050005;
+        public static final int positive=0x7f050006;
+        public static final int song=0x7f050007;
+        public static final int stamp=0x7f050008;
+        public static final int three=0x7f050009;
+        public static final int two=0x7f05000a;
+        public static final int whoosh=0x7f05000b;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int addprobabilitytext=0x7f070003;
+        public static final int ammounlocked=0x7f070006;
+        public static final int ammounlocked2=0x7f070007;
+        public static final int app_name=0x7f070000;
+        public static final int blocked=0x7f070008;
+        public static final int bonusunlocked=0x7f070005;
+        public static final int congratulation=0x7f07000b;
+        public static final int experience=0x7f070001;
+        public static final int price=0x7f070009;
+        public static final int sectionunlocked=0x7f070004;
+        public static final int seguici=0x7f07000d;
+        public static final int skip=0x7f07000a;
+        public static final int sviluppatoda=0x7f07000c;
+        public static final int textexit=0x7f070002;
+        /**  NOMI DEI MOSTRI 
+         */
+        public static final int w1m1=0x7f07000f;
+        public static final int w1m10=0x7f070018;
+        public static final int w1m2=0x7f070010;
+        public static final int w1m3=0x7f070011;
+        public static final int w1m4=0x7f070012;
+        public static final int w1m5=0x7f070013;
+        public static final int w1m6=0x7f070014;
+        public static final int w1m7=0x7f070015;
+        public static final int w1m8=0x7f070016;
+        public static final int w1m9=0x7f070017;
+        public static final int w2m1=0x7f070019;
+        public static final int w2m2=0x7f07001a;
+        public static final int w2m3=0x7f07001b;
+        public static final int w2m4=0x7f07001c;
+        public static final int w2m5=0x7f07001d;
+        public static final int w2m6=0x7f07001e;
+        public static final int w2m7=0x7f07001f;
+        public static final int w2m8=0x7f070020;
+        public static final int w3m1=0x7f070021;
+        public static final int w3m10=0x7f07002a;
+        public static final int w3m2=0x7f070022;
+        public static final int w3m3=0x7f070023;
+        public static final int w3m4=0x7f070024;
+        public static final int w3m5=0x7f070025;
+        public static final int w3m6=0x7f070026;
+        public static final int w3m7=0x7f070027;
+        public static final int w3m8=0x7f070028;
+        public static final int w3m9=0x7f070029;
+        public static final int w4m1=0x7f07002b;
+        public static final int w4m10=0x7f070034;
+        public static final int w4m2=0x7f07002c;
+        public static final int w4m3=0x7f07002d;
+        public static final int w4m4=0x7f07002e;
+        public static final int w4m5=0x7f07002f;
+        public static final int w4m6=0x7f070030;
+        public static final int w4m7=0x7f070031;
+        public static final int w4m8=0x7f070032;
+        public static final int w4m9=0x7f070033;
+        public static final int w5m1=0x7f070035;
+        public static final int w5m10=0x7f07003e;
+        public static final int w5m2=0x7f070036;
+        public static final int w5m3=0x7f070037;
+        public static final int w5m4=0x7f070038;
+        public static final int w5m5=0x7f070039;
+        public static final int w5m6=0x7f07003a;
+        public static final int w5m7=0x7f07003b;
+        public static final int w5m8=0x7f07003c;
+        public static final int w5m9=0x7f07003d;
+        public static final int wbm1=0x7f07003f;
+        public static final int wbm2=0x7f070040;
+        public static final int wbm3=0x7f070041;
+        public static final int wbm4=0x7f070042;
+        public static final int wbm5=0x7f070043;
+        public static final int youcanrename=0x7f07000e;
     }
     public static final class style {
+        public static final int AmmoGallery_Black_Skill=0x7f080013;
+        public static final int AmmoGallery_Black_Title=0x7f080014;
+        public static final int AmmoGallery_White_Title=0x7f080015;
+        public static final int AmmoHowManyProbability_Text=0x7f080016;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -118,10 +340,53 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f08001a;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f08001b;
+        public static final int CountdownFont_Black=0x7f080012;
+        public static final int CreditsTextTitle_Azzurro=0x7f080010;
+        public static final int CreditsText_Nero=0x7f080011;
+        public static final int DialogPaintBossPhrase_White=0x7f080009;
+        public static final int DialogPaintTextPercentageResult_White=0x7f08000c;
+        public static final int DialogPaintText_White=0x7f08000b;
+        public static final int DialogPaintText_White_Smaller=0x7f08000e;
+        public static final int DialogPaintTitle_White=0x7f08000a;
+        public static final int ExitText_Bianco=0x7f080017;
+        public static final int GalleryTitleText_Nero=0x7f080001;
+        public static final int HomeText_Azzurro=0x7f08000f;
+        public static final int InvenktionTheme=0x7f080000;
+        public static final int PaintSizeFont_Red=0x7f080008;
+        public static final int SectionChoose_StarText=0x7f080019;
+        public static final int SkipText=0x7f080018;
+        public static final int TimeFont_Black=0x7f080002;
+        public static final int TimeFont_Black_Dialog_Percentage=0x7f080004;
+        public static final int TimeFont_Black_DrawedLevelChoose=0x7f080005;
+        public static final int TimeFont_Black_NumberScroll=0x7f080006;
+        public static final int TimeFont_Black_PictureTitle=0x7f080007;
+        public static final int TimeFont_Red=0x7f080003;
+        public static final int UnlockedSubText_White=0x7f08000d;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a HelloGallery.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #HelloGallery_android_galleryItemBackground android:galleryItemBackground}</code></td><td></td></tr>
+           </table>
+           @see #HelloGallery_android_galleryItemBackground
+         */
+        public static final int[] HelloGallery = {
+            0x0101004c
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#galleryItemBackground}
+          attribute's value can be found in the {@link #HelloGallery} array.
+          @attr name android:galleryItemBackground
+        */
+        public static final int HelloGallery_android_galleryItemBackground = 0;
+    };
 }

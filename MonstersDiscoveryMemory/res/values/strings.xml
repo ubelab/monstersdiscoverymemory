@@ -1,8 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+   <string name="app_name">Monsters Discovery Memory</string>
+   <string name="experience">COINS</string>
+   <string name="textexit">QUIT THE GAME?</string>
+   <string name="addprobabilitytext">BUY THIS TRICK &#38; TRAP?</string>
+   <string name="sectionunlocked">SECTION UNLOCKED</string>
+   <string name="bonusunlocked">BONUS UNLOCKED</string>
+   <string name="ammounlocked">TRICK &#38; TRAP UNLOCKED</string>
+   <string name="ammounlocked2">YOU CAN BUY IT NOW!</string>
+   <string name="blocked">BLOKED</string>
+   <string name="price">PRICE</string>
+   <string name="skip">SKIP</string>
+   <string name="congratulation">CONGRATULATIONS!\nNOW TRY TO UNLOCK ALL BONUS MONSTERS \nGETTING THREE STARS ON ALL LEVELS.</string>
 
-    <string name="app_name">MonstersDiscoveryMemory</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-
+   <string name="sviluppatoda">A GAME DEVELOPED BY INVENKTION</string>
+   <string name="seguici">FOLLOW US</string>
+   <string name="youcanrename">WOW! IT\'S A NEW RECORD! GIVE A NAME TO THIS MONSTER . . .</string>
+   
+   
+   <!-- NOMI DEI MOSTRI -->
+   
+   <string name="w1m1">Monster 1</string>
+   <string name="w1m2">Monster 2</string>
+   <string name="w1m3">Monster 3</string>
+   <string name="w1m4">Monster 4</string>
+   <string name="w1m5">Monster 5</string>
+   <string name="w1m6">Monster 6</string>
+   <string name="w1m7">Monster 7</string>
+   <string name="w1m8">Monster 8</string>
+   <string name="w1m9">Monster w19</string>
+   <string name="w1m10">Monster w110</string>
+   
+   <string name="w2m1">Monster 9</string>
+   <string name="w2m2">Monster 10</string>
+   <string name="w2m3">Monster 11</string>
+   <string name="w2m4">Monster 12</string>
+   <string name="w2m5">Monster 13</string>
+   <string name="w2m6">Monster 14</string>
+   <string name="w2m7">Monster 15</string>
+   <string name="w2m8">Monster 16</string>
+   
+   <string name="w3m1">Monster 17</string>
+   <string name="w3m2">Monster 18</string>
+   <string name="w3m3">Monster 19</string>
+   <string name="w3m4">Monster 20</string>
+   <string name="w3m5">Monster 21</string>
+   <string name="w3m6">Monster 22</string>
+   <string name="w3m7">Monster 23</string>
+   <string name="w3m8">Monster 24</string>
+   <string name="w3m9">Monster 25</string>
+   <string name="w3m10">Monster 26</string>
+   
+   <string name="w4m1">Monster 9</string>
+   <string name="w4m2">Monster 10</string>
+   <string name="w4m3">Monster 11</string>
+   <string name="w4m4">Monster 12</string>
+   <string name="w4m5">Monster 13</string>
+   <string name="w4m6">Monster 14</string>
+   <string name="w4m7">Monster 15</string>
+   <string name="w4m8">Monster 16</string>
+   <string name="w4m9">Monster 15 bis</string>
+   <string name="w4m10">Monster 16 bis</string>
+   
+   <string name="w5m1">Monster 17</string>
+   <string name="w5m2">Monster 18</string>
+   <string name="w5m3">Monster 19</string>
+   <string name="w5m4">Monster 20</string>
+   <string name="w5m5">Monster 21</string>
+   <string name="w5m6">Monster 22</string>
+   <string name="w5m7">Monster 23</string>
+   <string name="w5m8">Monster 24</string>
+   <string name="w5m9">Monster 25</string>
+   <string name="w5m10">Monster 26</string>
+   
+   <string name="wbm1">Monster 27</string>
+   <string name="wbm2">Monster 27</string>
+   <string name="wbm3">Monster 27</string>
+   <string name="wbm4">Monster 27</string>
+   <string name="wbm5">Monster 27</string>
+  
 </resources>
