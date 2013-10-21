@@ -7,43 +7,82 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageButton;
 
 public class DisegnoButton extends ImageButton{
-	public static int NASCOSTO = 0;
-	public static int VISIBILE = 1;
 	
-	private int immagineGabbia = R.drawable.coperto;
+	private int immagineCoperto = R.drawable.coperto;
+	private int immagineEnigma = R.drawable.coperto_enigma;
 	private int immagineMostro;
-	private int stato = NASCOSTO;
+	private boolean bloccata = false;
 	
-	public DisegnoButton(Context context) {
+	public DisegnoButton(final Context context) {
 		super(context);
-		setImageResource(immagineGabbia);
+		setSoundEffectsEnabled(false);
+		setImageResource(immagineEnigma);
 		setBackgroundResource(R.drawable.white_btn);
 
 		setOnClickListener(new OnClickListener() {		
 			@Override
 			public void onClick(View v) {
-				if(stato == NASCOSTO) {
-					DisegnoButton.this.setImageResource(getImmagineMostro());
-					stato = VISIBILE;
-				}else {
-					DisegnoButton.this.setImageResource(getImmagineGabbia());
-					stato = NASCOSTO;
-				}
+				
+				if(bloccata || ApplicationManager.block) return;
+				ApplicationManager.block = true;
+				//Dalla prima volta che la si vede l'immagine con il punto di domanda non deve più apparire
+				immagineEnigma = immagineCoperto;
+				Animation anim = AnimationFactory.getTesseraAnimation(context);
+				anim.setAnimationListener(new AnimationListener() {
+					
+					@Override
+					public void onAnimationStart(Animation animation) {
+						DisegnoButton.this.setImageResource(getImmagineMostro());
+					}
+					
+					@Override
+					public void onAnimationRepeat(Animation animation) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void onAnimationEnd(Animation animation) {
+						if(ApplicationManager.CURRENT_SELECTION_NUMBER != -1) {
+							//Siamo alla seconda tessera scoperchiata, controllo se è uguale all'altra
+							if(DisegnoButton.this.getImmagineMostro() == ApplicationManager.CURRENT_SELECTION_TESSETA.getImmagineMostro()) {
+								//VITTORIA
+								bloccata = true;
+								//SoundManager.playSound(R.raw.positive, context, false);
+							}else {
+								//FALLIMENTO
+								DisegnoButton.this.setImageResource(DisegnoButton.this.getImmagineCoperto());
+								ApplicationManager.CURRENT_SELECTION_TESSETA.setImageResource(ApplicationManager.CURRENT_SELECTION_TESSETA.getImmagineCoperto());
+								//SoundManager.playSound(R.raw.negative, context, false);
+							}
+							ApplicationManager.TENTATIVO_NUMERO ++;
+							ApplicationManager.CURRENT_SELECTION_NUMBER = -1;
+							
+						}else {
+							ApplicationManager.CURRENT_SELECTION_NUMBER = 1;
+							ApplicationManager.CURRENT_SELECTION_TESSETA = DisegnoButton.this;
+						}
+						ApplicationManager.block = false;
+					}
+				});
+				DisegnoButton.this.startAnimation(anim);
 			}
 		});
 	}
 
-	public int getImmagineGabbia() {
-		return immagineGabbia;
+	public int getImmagineCoperto() {
+		return immagineCoperto;
 	}
 
 
 
 	public void setImmagineGabbia(int immagineGabbia) {
-		this.immagineGabbia = immagineGabbia;
+		this.immagineCoperto = immagineGabbia;
 	}
 
 

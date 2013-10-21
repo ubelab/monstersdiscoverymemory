@@ -14,7 +14,7 @@ import android.view.animation.ScaleAnimation;
 public class AnimationFactory {
 
 	static Animation colorChooseAnimation;
-	static Animation strumentiAnimation;
+	static Animation tesseraAnimation;
 	//static Animation levelPresentationAnimation1,levelPresentationAnimation2,levelPresentationAnimation3;
 	static Animation buttonDialogAnimation;
 	static Animation levelSelectionAnimation;
@@ -30,7 +30,7 @@ public class AnimationFactory {
 	
 	public static void releaseAllAnimation() {
 		colorChooseAnimation = null;
-		strumentiAnimation = null;
+		tesseraAnimation = null;
 		//levelPresentationAnimation1= null;
 		//levelPresentationAnimation2= null;
 		//levelPresentationAnimation3= null;
@@ -92,11 +92,11 @@ public class AnimationFactory {
 		return colorChooseAnimation;
 	}
 	
-	public static Animation getStrumentiAnimation(Context context) {
-		if(strumentiAnimation == null) {
-			strumentiAnimation = AnimationUtils.loadAnimation(context, R.anim.colorchooseanimation);
+	public static Animation getTesseraAnimation(Context context) {
+		if(tesseraAnimation == null) {
+			tesseraAnimation = AnimationUtils.loadAnimation(context, R.anim.tesseraanimation);
 		}
-		return strumentiAnimation;
+		return tesseraAnimation;
 	}
 /*
 	public static Animation getLevelPresentationAnimation1(Context context) {
@@ -224,7 +224,7 @@ public class AnimationFactory {
 		getRotationAnimation_3(context);
 		getRotationAnimation_4(context);
 		getRotationAnimation_5(context);
-		getStrumentiAnimation(context);
+		getTesseraAnimation(context);
 		getTerremotoAnimation(context);
 		getVorticeAnimation(context);
 		getJhonnyFaceAnimation(context);
