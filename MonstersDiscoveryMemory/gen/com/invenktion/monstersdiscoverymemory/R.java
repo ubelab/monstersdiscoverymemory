@@ -240,9 +240,10 @@ public final class R {
         public static final int positive=0x7f050006;
         public static final int song=0x7f050007;
         public static final int stamp=0x7f050008;
-        public static final int three=0x7f050009;
-        public static final int two=0x7f05000a;
-        public static final int whoosh=0x7f05000b;
+        public static final int swish=0x7f050009;
+        public static final int three=0x7f05000a;
+        public static final int two=0x7f05000b;
+        public static final int whoosh=0x7f05000c;
     }
     public static final class string {
         public static final int addprobabilitytext=0x7f070003;

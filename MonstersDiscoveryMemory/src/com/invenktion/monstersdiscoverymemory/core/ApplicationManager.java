@@ -7,6 +7,8 @@ public class ApplicationManager {
 	public static DisegnoButton CURRENT_SELECTION_TESSETA = null;
 	public static int TENTATIVO_NUMERO = 0;
 	public static boolean block = false;
+	public static int NUM_TO_WIN = 0;
+	public static int CURR_CORRECT = 0;
 	
 	public static int SCREEN_H, SCREEN_W;
 	public static String PREFS_NAME = "MONSTERS_D_MEMORY";
@@ -15,6 +17,8 @@ public class ApplicationManager {
 		CURRENT_SELECTION_NUMBER = -1;
 		CURRENT_SELECTION_TESSETA = null;
 		TENTATIVO_NUMERO = 0;
+		NUM_TO_WIN = 0;
+		CURR_CORRECT = 0;
 		block = false;
 	}
 }

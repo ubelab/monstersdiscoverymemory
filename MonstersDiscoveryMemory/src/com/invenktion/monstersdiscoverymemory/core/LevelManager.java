@@ -1,5 +1,11 @@
 package com.invenktion.monstersdiscoverymemory.core;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
 import com.invenktion.monstersdiscoverymemory.GameBoardActivity;
 import com.invenktion.monstersdiscoverymemory.R;
 import com.invenktion.monstersdiscoverymemory.R.drawable;
@@ -139,5 +145,26 @@ public class LevelManager {
 			else if(n >= disegniSmall.length) n = disegniSmall.length -1;
 			return disegniSmall[n];
 		}
+	}
+	
+	public static ArrayList<Integer> getRandomNx2DifferentImageResources(String GAME_MODE, int n) {
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		ArrayList<Integer> lista = new ArrayList<Integer>();
+		int trovate = 0;
+		while(trovate <n) {
+			int curr = getRandomImageResource(GAME_MODE);
+			Integer currInt = Integer.valueOf(curr);
+			if(map.containsKey(currInt)) {
+				continue;
+			}else {
+				map.put(currInt, currInt);
+				lista.add(currInt);
+				trovate++;
+			}
+		}
+		lista.addAll(lista);
+		long seed = System.nanoTime();
+		Collections.shuffle(lista, new Random(seed));
+		return lista;
 	}
 }

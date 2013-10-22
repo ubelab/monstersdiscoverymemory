@@ -1,5 +1,7 @@
 package com.invenktion.monstersdiscoverymemory;
 
+import java.util.ArrayList;
+
 import com.invenktion.monstersdiscoverymemory.core.ActivityHelper;
 import com.invenktion.monstersdiscoverymemory.core.ApplicationManager;
 import com.invenktion.monstersdiscoverymemory.core.DisegnoButton;
@@ -96,9 +98,15 @@ public class GameBoardActivity extends Activity {
         if(disegno_SIZE*N_DISEGNI_RIGA > W) {
         	disegno_SIZE = (int)((double)W/(double)N_DISEGNI_RIGA);
         }
-       
+        
+        ApplicationManager.NUM_TO_WIN = (N_DISEGNI_COLONNA*N_DISEGNI_RIGA)/2;
+        ApplicationManager.CURR_CORRECT = 0;
+        
+        ArrayList<Integer> lista = LevelManager.getRandomNx2DifferentImageResources(gamemode, (N_DISEGNI_COLONNA*N_DISEGNI_RIGA)/2);
+        int current = 0;
         for(int r=0; r < N_DISEGNI_COLONNA; r++) {
         	LinearLayout rowLayout = new LinearLayout(getApplicationContext());
+        	rowLayout.setClipChildren(false);
         		rowLayout.setOrientation(LinearLayout.HORIZONTAL);
         		rowContainer.addView(rowLayout);
         	for(int c=0; c<N_DISEGNI_RIGA; c++) {
@@ -106,8 +114,8 @@ public class GameBoardActivity extends Activity {
         			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(disegno_SIZE,disegno_SIZE);
         			but.setLayoutParams(params);
         			but.setScaleType(scaleType);
-        			but.setImmagineMostro(LevelManager.getRandomImageResource(gamemode));
-        			
+        			but.setImmagineMostro(lista.get(current));
+        			current++;
         			rowLayout.addView(but);
         	}
         }

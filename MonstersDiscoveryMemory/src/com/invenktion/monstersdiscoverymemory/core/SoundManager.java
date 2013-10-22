@@ -34,6 +34,7 @@ public class SoundManager {
 	public static final int SOUND_POSITIVE = 9;
 	public static final int SOUND_NEGATIVE = 10;
 	public static final int SOUND_WHOOSH = 11;
+	public static final int SOUND_WINNER = 12;
 
 	private static SoundPool soundPool;
 	private static SparseIntArray soundPoolMap;
@@ -67,6 +68,7 @@ public class SoundManager {
 			soundPoolMap.put(SOUND_POSITIVE, soundPool.load(context, R.raw.positive, 1));
 			soundPoolMap.put(SOUND_NEGATIVE, soundPool.load(context, R.raw.negative, 1));
 			soundPoolMap.put(SOUND_WHOOSH, soundPool.load(context, R.raw.whoosh, 1));
+			soundPoolMap.put(SOUND_WINNER, soundPool.load(context, R.raw.swish, 1));
 		}catch (Exception e) {
 			 e.printStackTrace();
 		}

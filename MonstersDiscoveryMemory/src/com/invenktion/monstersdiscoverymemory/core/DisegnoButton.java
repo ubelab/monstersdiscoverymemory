@@ -53,17 +53,24 @@ public class DisegnoButton extends ImageButton{
 							if(DisegnoButton.this.getImmagineMostro() == ApplicationManager.CURRENT_SELECTION_TESSETA.getImmagineMostro()) {
 								//VITTORIA
 								bloccata = true;
-								//SoundManager.playSound(R.raw.positive, context, false);
+								ApplicationManager.CURR_CORRECT++;
+								if(ApplicationManager.CURR_CORRECT == ApplicationManager.NUM_TO_WIN) {
+									SoundManager.playSound(SoundManager.SOUND_WINNER, getContext().getApplicationContext(), false);
+								}else {
+									SoundManager.playSound(SoundManager.SOUND_POSITIVE, getContext().getApplicationContext(), false);
+								}
 							}else {
 								//FALLIMENTO
 								DisegnoButton.this.setImageResource(DisegnoButton.this.getImmagineCoperto());
+								ApplicationManager.CURRENT_SELECTION_TESSETA.bloccata = false;
 								ApplicationManager.CURRENT_SELECTION_TESSETA.setImageResource(ApplicationManager.CURRENT_SELECTION_TESSETA.getImmagineCoperto());
-								//SoundManager.playSound(R.raw.negative, context, false);
+								SoundManager.playSound(SoundManager.SOUND_NEGATIVE, getContext().getApplicationContext(), false);
 							}
 							ApplicationManager.TENTATIVO_NUMERO ++;
 							ApplicationManager.CURRENT_SELECTION_NUMBER = -1;
 							
 						}else {
+							bloccata = true;
 							ApplicationManager.CURRENT_SELECTION_NUMBER = 1;
 							ApplicationManager.CURRENT_SELECTION_TESSETA = DisegnoButton.this;
 						}
