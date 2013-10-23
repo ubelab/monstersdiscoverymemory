@@ -11,6 +11,9 @@ import com.invenktion.monstersdiscoverymemory.core.SoundManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ImageView.ScaleType;
@@ -93,7 +96,7 @@ public class GameBoardActivity extends Activity {
         }
         
         int disegno_SIZE = (int)((double)H/(double)N_DISEGNI_COLONNA);
-        ScaleType scaleType = ScaleType.FIT_CENTER;
+        ScaleType scaleType = ScaleType.FIT_XY;
         //SE nella direzione dove non è stato eseguito il calcolo si sfora dallo schermo, ricalcolo
         if(disegno_SIZE*N_DISEGNI_RIGA > W) {
         	disegno_SIZE = (int)((double)W/(double)N_DISEGNI_RIGA);
@@ -106,7 +109,7 @@ public class GameBoardActivity extends Activity {
         int current = 0;
         for(int r=0; r < N_DISEGNI_COLONNA; r++) {
         	LinearLayout rowLayout = new LinearLayout(getApplicationContext());
-        	rowLayout.setClipChildren(false);
+        	//rowLayout.setClipChildren(false);
         		rowLayout.setOrientation(LinearLayout.HORIZONTAL);
         		rowContainer.addView(rowLayout);
         	for(int c=0; c<N_DISEGNI_RIGA; c++) {
@@ -117,6 +120,17 @@ public class GameBoardActivity extends Activity {
         			but.setImmagineMostro(lista.get(current));
         			current++;
         			rowLayout.addView(but);
+        			/*
+        			RotateAnimation anim = new RotateAnimation(0, 30,
+        		            Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,0.5f);
+
+        		    anim.setInterpolator(new LinearInterpolator());
+        		    anim.setDuration(1000);
+        		    anim.setFillEnabled(true);
+
+        		    anim.setFillAfter(true);
+        		    but.startAnimation(anim);
+        		    */
         	}
         }
     }
