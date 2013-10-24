@@ -23,7 +23,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name="com.invenktion.monstersdiscoverymemory.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:screenOrientation="landscape" 
 	        android:configChanges="locale|orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/app_name" >
@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.invenktion.monstersdiscoverymemory.MenuActivity"
+            android:name=".MenuActivity"
             android:screenOrientation="landscape" 
 	        android:configChanges="locale|orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/app_name" >
@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.invenktion.monstersdiscoverymemory.CreditsActivity"
+            android:name=".CreditsActivity"
             android:screenOrientation="landscape" 
 	        android:configChanges="locale|orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/app_name" >
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.invenktion.monstersdiscoverymemory.GameBoardActivity"
+            android:name=".GameBoardActivity"
             android:screenOrientation="landscape" 
 	        android:configChanges="locale|orientation|keyboard|keyboardHidden|screenSize"
             android:label="@string/app_name" >

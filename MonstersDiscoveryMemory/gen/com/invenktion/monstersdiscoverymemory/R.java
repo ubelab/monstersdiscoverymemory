@@ -180,8 +180,8 @@ public final class R {
         public static final int zeze=0x7f020089;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0027;
-        public static final int creditsimage=0x7f0a0022;
+        public static final int action_settings=0x7f0a0028;
+        public static final int creditsimage=0x7f0a0023;
         public static final int developed1=0x7f0a0003;
         public static final int developed2=0x7f0a0004;
         public static final int dialogbuttoncontainer=0x7f0a0015;
@@ -195,24 +195,25 @@ public final class R {
         public static final int homescreen=0x7f0a001a;
         public static final int impossibile=0x7f0a0020;
         public static final int invenktionbottom=0x7f0a001c;
-        public static final int invenktionbottomlogo=0x7f0a0023;
+        public static final int invenktionbottomlogo=0x7f0a0024;
         public static final int layout_root=0x7f0a0013;
         public static final int leadartisttext=0x7f0a0005;
         public static final int leadartisttextvalue=0x7f0a0006;
         public static final int leadprogrammertext=0x7f0a0007;
         public static final int leadprogrammertextvalue=0x7f0a0008;
         public static final int logoimage=0x7f0a0002;
-        public static final int logok=0x7f0a0024;
+        public static final int logok=0x7f0a0025;
         public static final int noButton=0x7f0a0017;
+        public static final int plus_one_button=0x7f0a0021;
         public static final int rowContainer=0x7f0a0018;
         public static final int scrollcredits=0x7f0a0000;
         public static final int scrolltraspbottom=0x7f0a0012;
         public static final int scrolltrasptop=0x7f0a0001;
         public static final int sound1=0x7f0a000c;
         public static final int sound2=0x7f0a000d;
-        public static final int soundimage=0x7f0a0021;
-        public static final int splashlayout=0x7f0a0025;
-        public static final int splashlogo=0x7f0a0026;
+        public static final int soundimage=0x7f0a0022;
+        public static final int splashlayout=0x7f0a0026;
+        public static final int splashlogo=0x7f0a0027;
         public static final int textcinque=0x7f0a001e;
         public static final int textexit=0x7f0a0014;
         public static final int texttre=0x7f0a001f;

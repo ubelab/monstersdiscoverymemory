@@ -1,5 +1,7 @@
 package com.invenktion.monstersdiscoverymemory;
 
+import com.google.android.gms.plus.PlusClient;
+import com.google.android.gms.plus.PlusOneButton;
 import com.invenktion.monstersdiscoverymemory.core.ActivityHelper;
 import com.invenktion.monstersdiscoverymemory.core.AnimationFactory;
 import com.invenktion.monstersdiscoverymemory.core.ApplicationManager;
@@ -10,9 +12,11 @@ import com.invenktion.monstersdiscoverymemory.core.SoundManager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.KeyguardManager;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.IntentSender.SendIntentException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -39,11 +43,25 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
+import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
 
 
-public class MenuActivity extends Activity{
+public class MenuActivity extends Activity implements
+ConnectionCallbacks, OnConnectionFailedListener{
 	//Typeface font; 
 	float DENSITY = 1.0f;
+	
+	private static final int REQUEST_CODE_RESOLVE_ERR = 9000;
+
+    private ProgressDialog mConnectionProgressDialog;
+    private PlusClient mPlusClient;
+    private ConnectionResult mConnectionResult;
+
+	PlusOneButton mPlusOneButton;
 	
 	BroadcastReceiver mReceiver;
 	
@@ -146,11 +164,16 @@ public class MenuActivity extends Activity{
 	    }
 	    return super.onKeyDown(keyCode, event);
 	}
+	// The request code must be 0 or greater.
+	private static final int PLUS_ONE_REQUEST_CODE = 0;
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-	
+		// Aggiorna lo stato del pulsante +1 ogni volta che l'attività riceve lo stato attivo.
+		mPlusOneButton.initialize("https://play.google.com/store/apps/details?id=com.invenktion.monstersdiscovery&hl=it", PLUS_ONE_REQUEST_CODE);
+
+
 		//Rilancio la musica se e solo se non è già attiva
 		//Questo ci permette di utilizzare la stessa traccia musicale tra Activity differenti, oltre
 		//al metodo presente nel onPause che controlla se siamo o no in background
@@ -184,10 +207,6 @@ public class MenuActivity extends Activity{
 		}
 	}
 
-	@Override
-	protected void onStop() {
-		super.onStop();
-	}
 	
 	private boolean checkApplicationKill() {
 		if(ApplicationManager.APPLICATION_KILLED == null) {
@@ -199,6 +218,28 @@ public class MenuActivity extends Activity{
 		}
 		return false;
 	}
+	
+	@Override
+    protected void onStart() {
+        super.onStart();
+        mPlusClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mPlusClient.disconnect();
+    }
+
+    public void onConnected() {
+        String accountName = mPlusClient.getAccountName();
+        Toast.makeText(this, accountName + " is connected.", Toast.LENGTH_LONG).show();
+    }
+
+    public void onDisconnected() {
+        Log.d("", "disconnected");
+    }
+
 	
 	/** Called when the activity is first created. */
     @Override
@@ -213,6 +254,18 @@ public class MenuActivity extends Activity{
         registerReceiver(mReceiver, filter);
         
         setContentView(R.layout.home);
+        
+        mPlusClient = new PlusClient.Builder(this, this, this)
+		        .setVisibleActivities("http://schemas.google.com/AddActivity", "http://schemas.google.com/BuyActivity")
+		        .build();
+		// Barra di avanzamento da visualizzare se l'errore di connessione non viene risolto.
+		mConnectionProgressDialog = new ProgressDialog(this);
+		mConnectionProgressDialog.setMessage("Signing in...");
+
+
+        mPlusOneButton = (PlusOneButton) findViewById(R.id.plus_one_button);
+
+        
         this.DENSITY = getApplicationContext().getResources().getDisplayMetrics().density;
         
         FrameLayout frameLayout = (FrameLayout)findViewById(R.id.homelayout);
@@ -380,5 +433,41 @@ public class MenuActivity extends Activity{
         rotAnim.setFillAfter(true);rotAnim.setFillBefore(true);
         faceJhonny.setAnimation(rotAnim);
     }
+
+	@Override
+	public void onConnectionFailed(ConnectionResult result) {
+		if (mConnectionProgressDialog.isShowing()) {
+            // L'utente ha già fatto clic sul pulsante di accesso. Inizia a risolvere
+            // gli errori di connessione. Attendi fino a onConnected() per eliminare la
+            // finestra di dialogo di connessione.
+            if (result.hasResolution()) {
+                    try {
+                            result.startResolutionForResult(this, REQUEST_CODE_RESOLVE_ERR);
+                    } catch (SendIntentException e) {
+                            mPlusClient.connect();
+                    }
+            }
+    }
+
+    // Salva l'intent in modo che sia possibile avviare un'attività quando l'utente fa clic
+    // sul pulsante di accesso.
+    mConnectionResult = result;
+
+	}
+
+	@Override
+	public void onConnected(Bundle arg0) {
+		// Abbiamo risolto ogni errore di connessione.
+		  mConnectionProgressDialog.dismiss();
+
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
+	    if (requestCode == REQUEST_CODE_RESOLVE_ERR && responseCode == RESULT_OK) {
+	        mConnectionResult = null;
+	        mPlusClient.connect();
+	    }
+	}
 
 }
