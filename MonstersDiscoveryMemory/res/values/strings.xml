@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_id">313003532171844</string>
+    <string name="authorities_app_id">com.facebook.app.NativeAppCallContentProvider313003532171844</string>
    <string name="app_name">Monsters Discovery Memory</string>
    <string name="experience">COINS</string>
    <string name="textexit">QUIT THE GAME?</string>
