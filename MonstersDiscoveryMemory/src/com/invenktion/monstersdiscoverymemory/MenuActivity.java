@@ -1,5 +1,13 @@
 package com.invenktion.monstersdiscoverymemory;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+import com.facebook.Session;
+import com.facebook.SessionState;
+import com.facebook.UiLifecycleHelper;
+import com.facebook.widget.LoginButton;
 import com.invenktion.monstersdiscoverymemory.core.ActivityHelper;
 import com.invenktion.monstersdiscoverymemory.core.AnimationFactory;
 import com.invenktion.monstersdiscoverymemory.core.ApplicationManager;
@@ -14,6 +22,7 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,6 +35,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MenuActivity extends Activity {
+	private static final String TAG = "MenuActivity";
+	
 	//Typeface font; 
 	float DENSITY = 1.0f;
 
@@ -37,8 +48,62 @@ public class MenuActivity extends Activity {
 	
 	private ImageView soundImage;
 	
+	private LoginButton loginButton;
+	//FACEBOOK
+	private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
+	private UiLifecycleHelper uiHelper;
+	private Session.StatusCallback callback = 
+	    new Session.StatusCallback() {
+	    @Override
+	    public void call(Session session, 
+	            SessionState state, Exception exception) {
+	        onSessionStateChange(session, state, exception);
+	    }
+	};
+
+	private boolean isSubsetOf(Collection<String> subset, Collection<String> superset) {
+		for (String string : subset) {
+			if (!superset.contains(string)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private void onSessionStateChange(Session session, SessionState state, Exception exception) {
+	    if (state.isOpened()) {
+	        Log.i(TAG, "Logged in...");
+	        // Check for publish permissions    
+	        List<String> permissions = session.getPermissions();
+	        if (!isSubsetOf(PERMISSIONS, permissions)) {
+	            Session.NewPermissionsRequest newPermissionsRequest = new Session
+	                    .NewPermissionsRequest(this, PERMISSIONS);
+	        session.requestNewPublishPermissions(newPermissionsRequest);
+	            return;
+	        }
+	    } else if (state.isClosed()) {
+	        Log.i(TAG, "Logged out...");
+	    }
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle outState) {
+	    super.onSaveInstanceState(outState);
+	    try{
+	    	uiHelper.onSaveInstanceState(outState);
+	    }catch (Exception e) {
+			e.printStackTrace();//altrimenti crashava
+		}
+	}
+	
 	@Override
 	protected void onDestroy() {
+		//fb
+		try{
+			uiHelper.onDestroy();
+		}catch (Exception e) {
+			e.printStackTrace();//altrimenti crashava
+		}
 		//Rilascio l'animazione sulla faccia di Jhonny
 		if(findViewById(R.id.facejhonny) != null) {
 			ImageView faceJhonny = ((ImageView)findViewById(R.id.facejhonny));
@@ -130,12 +195,26 @@ public class MenuActivity extends Activity {
 	    }
 	    return super.onKeyDown(keyCode, event);
 	}
-
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    super.onActivityResult(requestCode, resultCode, data);
+	    try{
+	    	uiHelper.onActivityResult(requestCode, resultCode, data);
+	    }catch (Exception e) {
+			e.printStackTrace();//altrimenti crashava
+		}
+	}
 	
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
+		//fb
+		try {
+			uiHelper.onResume();
+		}catch (Exception e) {
+			e.printStackTrace();//altrimenti crashava
+		}
 		//Rilancio la musica se e solo se non è già attiva
 		//Questo ci permette di utilizzare la stessa traccia musicale tra Activity differenti, oltre
 		//al metodo presente nel onPause che controlla se siamo o no in background
@@ -163,6 +242,11 @@ public class MenuActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		try{
+			uiHelper.onPause();
+		}catch (Exception e) {
+			e.printStackTrace();//altrimenti crashava
+		}
 		//Spengo la musica solo se un'altra applicazione è davanti alla nostra (VOICE CALL, HOME Button, etc..)
 		if(ActivityHelper.isApplicationBroughtToBackground(this)) {
 			SoundManager.pauseBackgroundMusic();
@@ -196,6 +280,12 @@ public class MenuActivity extends Activity {
         setContentView(R.layout.home);
         
         this.DENSITY = getApplicationContext().getResources().getDisplayMetrics().density;
+        
+        //FACEBOOK
+        uiHelper = new UiLifecycleHelper(this, callback);
+        uiHelper.onCreate(savedInstanceState);
+
+        loginButton = (LoginButton)findViewById(R.id.authButton);
         
         FrameLayout frameLayout = (FrameLayout)findViewById(R.id.homelayout);
 

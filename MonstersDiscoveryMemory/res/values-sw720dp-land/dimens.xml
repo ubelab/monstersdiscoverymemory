@@ -5,5 +5,19 @@
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     -->
     <dimen name="activity_horizontal_margin">128dp</dimen>
-
+	<dimen name="dialogwinnertextbig">60dp</dimen>
+	<dimen name="dialogattemptstext">25dp</dimen>
+	<dimen name="logokw">260dp</dimen>
+	<dimen name="logokh">66dp</dimen>
+	<dimen name="homeicon">80dp</dimen>
+	<dimen name="exitdialogimage">240dp</dimen>
+	<dimen name="t15sp">25sp</dimen>
+	<dimen name="t20sp">35sp</dimen>
+	<dimen name="t25sp">40sp</dimen>
+	<dimen name="t30sp">50sp</dimen>
+	<dimen name="t35sp">60sp</dimen>
+	<dimen name="t40sp">60sp</dimen>
+	<dimen name="t50sp">70sp</dimen>
+	<dimen name="creditslogow">400dp</dimen>
+	<dimen name="creditslogoh">238dp</dimen>
 </resources>

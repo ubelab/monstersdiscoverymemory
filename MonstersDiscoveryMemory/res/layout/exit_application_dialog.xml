@@ -14,8 +14,8 @@
 	              android:gravity="center_horizontal"
 	              >
         <ImageView 
-		              android:layout_width="120dip"
-		              android:layout_height="120dip"
+		              android:layout_width="@dimen/exitdialogimage"
+		              android:layout_height="@dimen/exitdialogimage"
 		              android:textColor="#000"
 		              android:gravity="center"
 		              android:src="@drawable/w3_monster8"
@@ -53,23 +53,23 @@
 	              >
 	        
 		    <ImageView android:id="@+id/yesButton"
-		              android:layout_width="50dip"
-		              android:layout_height="50dip"
+		              android:layout_width="@dimen/homeicon"
+		              android:layout_height="@dimen/homeicon"
 		              android:textColor="#000"
 		              android:gravity="center"
 		              android:src="@drawable/btn_yes"
 		              />
 		     <!-- ### IMMAGINE DI SPAZIAMENTO -->
              <ImageView 
-		              android:layout_width="50dip"
-		              android:layout_height="50dip"
+		              android:layout_width="@dimen/homeicon"
+		              android:layout_height="@dimen/homeicon"
 		              android:textColor="#000"
 		              android:gravity="center"
 		              android:src="@drawable/transparent"
 		              />
 		    <ImageView android:id="@+id/noButton"
-		              android:layout_width="50dip"
-		              android:layout_height="50dip"
+		              android:layout_width="@dimen/homeicon"
+		              android:layout_height="@dimen/homeicon"
 		              android:textColor="#000"
 		              android:gravity="center"
 		              android:src="@drawable/btn_no"

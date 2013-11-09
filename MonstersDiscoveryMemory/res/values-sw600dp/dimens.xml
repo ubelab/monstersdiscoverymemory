@@ -4,5 +4,17 @@
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw600dp devices (e.g. 7" tablets) here.
     -->
-
+	<dimen name="dialogwinnertextbig">50dp</dimen>
+	<dimen name="dialogattemptstext">25dp</dimen>
+	<dimen name="homeicon">60dp</dimen>
+	<dimen name="exitdialogimage">200dip</dimen>
+	<dimen name="t15sp">20sp</dimen>
+	<dimen name="t20sp">30sp</dimen>
+	<dimen name="t25sp">35sp</dimen>
+	<dimen name="t30sp">40sp</dimen>
+	<dimen name="t35sp">50sp</dimen>
+	<dimen name="t40sp">50sp</dimen>
+	<dimen name="t50sp">60sp</dimen>
+	<dimen name="creditslogow">400dp</dimen>
+	<dimen name="creditslogoh">238dp</dimen>
 </resources>

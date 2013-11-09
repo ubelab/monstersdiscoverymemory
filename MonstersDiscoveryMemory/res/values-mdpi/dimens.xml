@@ -1,0 +1,22 @@
+<!-- MEDIUM/SMALL DEVICES MDPI -->
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">14dp</dimen>
+    <dimen name="activity_vertical_margin">14dp</dimen>
+	<dimen name="dialogwinnertextbig">35sp</dimen>
+	<dimen name="dialogattemptstext">14sp</dimen>
+	<dimen name="logokw">130dp</dimen>
+	<dimen name="logokh">33dp</dimen>
+	<dimen name="homeicon">30dp</dimen>
+	<dimen name="exitdialogimage">100dp</dimen>
+	<dimen name="t15sp">13sp</dimen>
+	<dimen name="t20sp">18sp</dimen>
+	<dimen name="t25sp">23sp</dimen>
+	<dimen name="t30sp">28sp</dimen>
+	<dimen name="t35sp">33sp</dimen>
+	<dimen name="t40sp">38sp</dimen>
+	<dimen name="t50sp">45sp</dimen>
+	<dimen name="creditslogow">200dp</dimen>
+	<dimen name="creditslogoh">119dp</dimen>
+</resources>

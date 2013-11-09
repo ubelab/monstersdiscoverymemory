@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/winner_fragment_dialog_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#aa000000">
+	<!--  
+    <ImageView
+        android:contentDescription="@string/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/dialogbg" />
+    -->
+    <TextView
+        android:id="@+id/winnertext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textAppearance="@style/WinnerText_Bianco"
+        android:text="@string/winner" />
+   	<LinearLayout 
+   	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_centerHorizontal="true"
+	        android:layout_alignParentTop="true"
+    	android:orientation="horizontal"
+   	    >
+   	    <TextView
+   	        android:id="@+id/tentativilabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textAppearance="@style/AttemptsText_Bianco"
+	        android:text="@string/numeroditentativi" />
+		<TextView
+	       android:id="@+id/tentativitext"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:textAppearance="@style/AttemptsText_Bianco"
+	       android:text="0" />
+   	</LinearLayout>
+    
+
+
+</RelativeLayout> 

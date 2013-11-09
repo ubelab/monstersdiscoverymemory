@@ -147,6 +147,7 @@ public class LevelManager {
 		}
 	}
 	
+	//Prendo N mostri, poi faccio un array con i mostro duplicati e mischio col SHUFFLE
 	public static ArrayList<Integer> getRandomNx2DifferentImageResources(String GAME_MODE, int n) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		ArrayList<Integer> lista = new ArrayList<Integer>();
